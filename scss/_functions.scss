@@ -46,7 +46,7 @@
 @function map-get-multiple($map, $values) {
   $result: ();
   @each $key, $value in $map {
-    @if (index($values, $key) != null) {
+    @if (index($values, $key+'') != null) {
       $result: map-merge($result, ($key: $value));
     }
   }
